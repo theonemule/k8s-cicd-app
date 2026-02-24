@@ -57,6 +57,8 @@ jobs:
     runs-on: ubuntu-latest
     # Skip on PRs — only update GitOps on merges to main
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout code
