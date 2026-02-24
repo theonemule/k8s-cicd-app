@@ -41,6 +41,7 @@ jobs:
           type=sha,prefix={{branch}}-
           type=ref,event=branch
           type=semver,pattern={{version}}
+          type=raw,value=latest
     
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
@@ -79,4 +80,4 @@ jobs:
           k8s/deployment.yaml
           k8s/service.yaml
         images: |
-          ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:main-${{ github.sha }}
+          ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
