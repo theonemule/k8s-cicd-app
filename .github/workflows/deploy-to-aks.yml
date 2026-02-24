@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: mydevopsacr123
+  ACR_NAME: aksworkshopacr12345
   IMAGE_NAME: sample-app
   DEPLOYMENT_MANIFEST: k8s/deployment.yaml
 
