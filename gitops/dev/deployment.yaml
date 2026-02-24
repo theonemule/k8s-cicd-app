@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: mydevopsacr123.azurecr.io/sample-app:latest
+        image: aksworkshopacr12345.azurecr.io/sample-app:main
         ports:
         - containerPort: 8080
         env:
