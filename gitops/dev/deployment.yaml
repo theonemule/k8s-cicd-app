@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-dev
+  labels:
+    app: sample-app
+    env: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: sample-app
+        env: dev
+    spec:
+      containers:
+      - name: app
+        image: mydevopsacr123.azurecr.io/sample-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ENVIRONMENT
+          value: "development"
